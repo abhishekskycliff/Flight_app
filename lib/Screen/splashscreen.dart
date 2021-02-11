@@ -33,35 +33,34 @@ class SplashScreen_State extends State<SplashScreen> {
       body: Container(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                  //   child:Widgetimage.getwidget(),
-                  ),
               Container(
                 child: Image.asset(
                   Strings.logo_image,
                   width: MediaQuery.of(context).size.width * 0.5,
                   height: MediaQuery.of(context).size.height * 0.1,
                 ),
-                margin: const EdgeInsets.only(top: 300),
+                //   margin: const EdgeInsets.only(top: 300),
               ),
               Container(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      Strings.text_navana,
+                      Strings.App_Title_1,
                       style:
                           GoogleFonts.baloo(fontSize: 40, color: Colors.white),
                     ),
                     Text(
-                      Strings.text_air,
+                      Strings.App_Title_2,
                       style: GoogleFonts.baloo(
                           fontSize: 40,
                           color: Colorvalue.splashscreen_text_color),
                     ),
                   ],
                 ),
-                margin: const EdgeInsets.only(left: 100),
+                //margin: const EdgeInsets.only(left: 100),
               ),
             ],
           ),

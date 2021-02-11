@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class Widgetimage extends StatelessWidget {
   //String assetName;
   final String img;
+  final String Text_field;
 
-  Widgetimage({String this.img});
+  Widgetimage({String this.img, this.Text_field});
 
   @override
   Widget build(BuildContext context) {
@@ -19,4 +20,5 @@ class Widgetimage extends StatelessWidget {
       // margin: const EdgeInsets.only(bottom: 15),
     );
   }
+
 }

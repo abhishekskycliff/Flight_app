@@ -22,14 +22,6 @@ class Intro_State extends State<Introduction> {
   void IntroEnd(context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => LoginScreen()));
-    //
-    // try {
-    //   Navigator.of(context)
-    //       .push(MaterialPageRoute(builder: (context) => LoginScreen()));
-    // }
-    // catch(Exception ){
-    //   print("You got error while Navigating to LoginScreen");
-    // }
   }
 
   @override
@@ -41,7 +33,7 @@ class Intro_State extends State<Introduction> {
           /// pages which gives the space to add the components within PageViewModel
           /// PageViewModel wellcome to navana air
           PageViewModel(
-            title: "Welcome to navana air",
+            title: Strings.title_1,
             bodyWidget: Column(
               children: [
                 Text(
@@ -59,7 +51,8 @@ class Intro_State extends State<Introduction> {
 
           /// PageViewModel Flying community
           PageViewModel(
-            title: "Flying Community",
+            title: Strings.title_2,
+          //  Text(Strings.title2),
             bodyWidget: Column(
               children: [
                 Text(
@@ -77,7 +70,7 @@ class Intro_State extends State<Introduction> {
 
           /// PageViewModel Book your ticket
           PageViewModel(
-            title: "Book Your Ticket",
+            title: Strings.title_3,
             bodyWidget: Column(
               children: [
                 Text(
@@ -95,7 +88,7 @@ class Intro_State extends State<Introduction> {
 
           /// PageViewModel Family security
           PageViewModel(
-            title: "Family Security",
+            title: Strings.title_4,
             bodyWidget: Column(
               children: [
                 Text(
