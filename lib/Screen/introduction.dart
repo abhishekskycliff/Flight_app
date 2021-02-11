@@ -1,14 +1,14 @@
-import 'package:flightapp/Screen/HomeScreen.dart';
+import 'package:flightapp/Theams/Widget/widgetimages.dart';
+import 'package:flightapp/Values/color.dart';
 import 'package:flightapp/Values/string.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'Authentication/loginscreen.dart';
 
 class Introduction extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return Intro_State();
   }
 }
@@ -16,24 +16,20 @@ class Introduction extends StatefulWidget {
 class Intro_State extends State<Introduction> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
-  ///  IntroEnd is a method which Navigate to the Next Screen
+  ///  IntroEnd is a method which Navigate to the LoginScreen Screen on clicking the Done text if user is not signedin else it navigate to HomeScreen
+  /// this statement works only after using Shared preference
+
   void IntroEnd(context) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => HomeScreen()));
-  }
-
-  Widget _buildImage(String assetName) {
-    return Align(
-      child: Container(
-        child: Image.asset(
-          'asset/images/$assetName',
-          width: 358.0,
-          height: 600,
-        ),
-        margin: const EdgeInsets.only(top: 150,bottom: 10),
-        color: Colors.amber,
-      ),
-    );
+        .push(MaterialPageRoute(builder: (context) => LoginScreen()));
+    //
+    // try {
+    //   Navigator.of(context)
+    //       .push(MaterialPageRoute(builder: (context) => LoginScreen()));
+    // }
+    // catch(Exception ){
+    //   print("You got error while Navigating to LoginScreen");
+    // }
   }
 
   @override
@@ -42,66 +38,74 @@ class Intro_State extends State<Introduction> {
       body: IntroductionScreen(
         key: introKey,
         pages: [
+          /// pages which gives the space to add the components within PageViewModel
+          /// PageViewModel wellcome to navana air
           PageViewModel(
-            title: "hello i am title",
+            title: "Welcome to navana air",
             bodyWidget: Column(
               children: [
                 Text(
-                  Strings.pageviwmodel1,
+                  Strings.page_view_model_1,
                   style: GoogleFonts.baloo(
-                      fontSize: 30, color: HexColor("#1f1f98")),
+                      fontSize: 20, color: Colorvalue.intro_text_color),
                 ),
               ],
             ),
-            image: _buildImage('intro1.png'),
+            image: Widgetimage(img: "intro1.png"),
             decoration: const PageDecoration(
               pageColor: Colors.white,
             ),
           ),
+
+          /// PageViewModel Flying community
           PageViewModel(
-            title: "",
+            title: "Flying Community",
             bodyWidget: Column(
               children: [
                 Text(
-                  Strings.pageviwmodel1,
+                  Strings.page_view_model_2,
                   style: GoogleFonts.baloo(
-                      fontSize: 30, color: HexColor("#1f1f98")),
+                      fontSize: 20, color: Colorvalue.intro_text_color),
                 ),
               ],
             ),
-            image: _buildImage('intro2.jpg'),
+            image: Widgetimage(img: "intro2.jpg"),
             decoration: const PageDecoration(
               pageColor: Colors.white,
             ),
           ),
+
+          /// PageViewModel Book your ticket
           PageViewModel(
-            title: "",
+            title: "Book Your Ticket",
             bodyWidget: Column(
               children: [
                 Text(
-                  Strings.pageviwmodel1,
+                  Strings.page_view_model_3,
                   style: GoogleFonts.baloo(
-                      fontSize: 30, color: HexColor("#1f1f98")),
+                      fontSize: 20, color: Colorvalue.intro_text_color),
                 ),
               ],
             ),
-            image: _buildImage('intro3.gif'),
+            image: Widgetimage(img: "intro3.png"),
             decoration: const PageDecoration(
               pageColor: Colors.white,
             ),
           ),
+
+          /// PageViewModel Family security
           PageViewModel(
-            title: "",
+            title: "Family Security",
             bodyWidget: Column(
               children: [
                 Text(
-                  Strings.pageviwmodel1,
+                  Strings.page_view_model_4,
                   style: GoogleFonts.baloo(
-                      fontSize: 30, color: HexColor("#1f1f98")),
+                      fontSize: 20, color: Colorvalue.intro_text_color),
                 ),
               ],
             ),
-            image: _buildImage('intro1'),
+            image: Widgetimage(img: "intro4.jpg"),
             decoration: const PageDecoration(
               pageColor: Colors.white,
             ),
@@ -113,11 +117,7 @@ class Intro_State extends State<Introduction> {
         nextFlex: 0,
         skip: const Text('Skip intro'),
         next: const Icon(Icons.arrow_forward),
-        done: const FlatButton(
-          child: Text('Done'),
-          color: Colors.blueAccent,
-        ),
-        //Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+        done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
         dotsDecorator: const DotsDecorator(
           size: Size(10.0, 10.0),
           color: Color(0xFFBDBDBD),

@@ -1,14 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Widgetimage{
+class Widgetimage extends StatelessWidget {
+  //String assetName;
+  final String img;
 
-  static getwidget(String assetimage){
-    return Align(
-      child: Image.asset('asset/$assetimage.png', width: 350.0,),
-      alignment: Alignment.bottomCenter,
+  Widgetimage({String this.img});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Image.asset(
+        'asset/images/$img',
+        width: 358.0,
+        height: MediaQuery.of(context).size.width,
+      ),
+      // margin: const EdgeInsets.only(bottom: 15),
     );
   }
-
-
 }
