@@ -1,3 +1,4 @@
+import 'package:flightapp/Screen/Authentication/registrationscreen.dart';
 import 'package:flightapp/Theams/Widget/widgetimages.dart';
 import 'package:flightapp/Values/color.dart';
 import 'package:flightapp/Values/string.dart';
@@ -21,7 +22,7 @@ class Intro_State extends State<Introduction> {
 
   void IntroEnd(context) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => LoginScreen()));
+        .push(MaterialPageRoute(builder: (context) => RegistrationScreen()));
   }
 
   @override

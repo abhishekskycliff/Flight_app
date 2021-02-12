@@ -26,31 +26,6 @@ class Login_State extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  child: Text(
-                    Strings.create_account,
-                    style: GoogleFonts.roboto(
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold,
-                        color: Colorvalue.create_account_color),
-                  ),
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  height: MediaQuery.of(context).size.height * 0.15,
-                  margin: const EdgeInsets.only(top: 30, right: 100),
-                  // color: Colors.yellow,
-                ),
-                Container(
-                  child: ListTile(
-                    title: Text(
-                      Strings.name,
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black54),
-                    ),
-                  ),
-                  margin: const EdgeInsets.only(left: 14),
-                ),
-                Container(
                   child: TextField(
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
@@ -131,13 +106,20 @@ class Login_State extends State<LoginScreen> {
                               color: Colors.black54,
                             ),
                           ),
-                          Text(
-                            Strings.sign_in,
-                            style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.pinkAccent,
+                          FlatButton(
+                            child: Text(
+                              Strings.sign_in,
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.pinkAccent,
+                              ),
                             ),
+                            onPressed: (){
+                              Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context) => LoginScreen()),
+                              );
+                            },
                           ),
                         ],
                       ),

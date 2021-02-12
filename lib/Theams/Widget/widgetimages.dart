@@ -20,5 +20,4 @@ class Widgetimage extends StatelessWidget {
       // margin: const EdgeInsets.only(bottom: 15),
     );
   }
-
 }
