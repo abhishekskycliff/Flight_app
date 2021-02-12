@@ -20,6 +20,7 @@ class Strings {
   static const String create_account = "Create\nan account";
   static const String sign_in_account = "Sign in to your account";
   static const String have_account = "Already have an account ? ";
+  static const String not_have_account = "Not have an account ? ";
   static const String name ="Name";
   static const String name_hint =" Enter your Name";
   static const String email_hint ="Enter your Email";

@@ -7,7 +7,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flightapp/Values/string.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'loginscreen.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -19,10 +18,6 @@ class RegistrationScreen extends StatefulWidget {
 
 class Registration_State extends State<RegistrationScreen> {
   bool _passwordvisible;
-
-  // final controller_name = TextEditingController();
-  // final controller_email = TextEditingController();
-  // final controller_password = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -30,21 +25,7 @@ class Registration_State extends State<RegistrationScreen> {
     _passwordvisible = false;
   }
 
-  // String validateEmail(String value) {
-  //   Pattern pattern =
-  //       r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]"
-  //       r"{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]"
-  //       r"{0,253}[a-zA-Z0-9])?)*$";
-  //   RegExp regex = new RegExp(pattern);
-  //   if (!regex.hasMatch(value) || value == null)
-  //     return 'Enter a valid email address';
-  //   else
-  //     return null;
-  // }
-  void verifyemail() {
-    setState(() {});
-  }
-
+  /// method to validate the password
   String validatePassword(String value) {
     Pattern pattern =
         r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
@@ -60,11 +41,12 @@ class Registration_State extends State<RegistrationScreen> {
     }
   }
 
+  /// method to validate the email
   String validateEmail(String value) {
-    Pattern pattern =
-        r'^(?=.*?[a-z])(?=.*?[!@#\$&*~]).{8,}$';
+    Pattern pattern = r'^(?=.*?[a-z])(?=.*?[!@#\$&*~]).{8,}$';
     RegExp regex = new RegExp(pattern);
     print(value);
+
     if (value.isEmpty) {
       return 'Please enter Email';
     } else {
@@ -74,10 +56,6 @@ class Registration_State extends State<RegistrationScreen> {
         return null;
     }
   }
-  // void verify() {
-  //   var check_email = controller_email.text;
-  //   var check_password = controller_email.text;
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -250,13 +228,12 @@ class Registration_State extends State<RegistrationScreen> {
                                 color: Colors.pinkAccent,
                               ),
                             ),
-                            onPressed: verifyemail,
-                            //     () {
-                            //   Navigator.of(context).push(
-                            //     MaterialPageRoute(
-                            //         builder: (context) => LoginScreen()),
-                            //   );
-                            // },
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => LoginScreen()),
+                              );
+                            },
                           ),
                         ],
                       ),
