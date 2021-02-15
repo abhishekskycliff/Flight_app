@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Widgetimage extends StatelessWidget {
+class ImageWidget extends StatelessWidget {
   //String assetName;
   final String img;
   final String Text_field;
 
-  Widgetimage({String this.img, this.Text_field});
+  ImageWidget({String this.img, this.Text_field});
 
   @override
   Widget build(BuildContext context) {

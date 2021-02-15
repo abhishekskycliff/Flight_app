@@ -30,5 +30,18 @@ class Strings {
   static const String sign_out ="Sign out";
   static const String sign_up ="Sign up";
   static const String skip ="Skip for Now";
+  static const String password_regexp =r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+  static const String email_regexp =r'^(?=.*?[a-z])(?=.*?[!@#\$&*~]).{8,}$';
+
+  static const String flight ="Flight";
+  static const String hotel ="Hotel";
+  static const String car ="Car";
+  static const String resturant ="Resturant";
+  static const String train ="train";
+  static const String shop ="Shops";
+
+
 
 }
+
+

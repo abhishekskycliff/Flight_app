@@ -1,7 +1,6 @@
-import 'package:flightapp/Screen/Home/homescreen.dart';
+import 'file:///D:/Flutter%20Projects/flightapp/lib/Screen/Bottom%20Navigation/home_screen.dart';
 import 'package:flightapp/Screen/introduction.dart';
-import 'package:flightapp/Theams/Widget/Button.dart';
-import 'package:flightapp/Theams/appbar.dart';
+import 'package:flightapp/Theams/Widget/button.dart';
 import 'package:flightapp/Values/color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

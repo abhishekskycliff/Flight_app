@@ -1,11 +1,9 @@
 import 'dart:ui';
-
 import 'package:flightapp/Screen/Authentication/registrationscreen.dart';
-import 'package:flightapp/Screen/Home/homescreen.dart';
-import 'package:flightapp/Screen/introduction.dart';
-import 'package:flightapp/Theams/Widget/Button.dart';
-import 'package:flightapp/Theams/Widget/widgetimages.dart';
-import 'package:flightapp/Theams/appbar.dart';
+import 'file:///D:/Flutter%20Projects/flightapp/lib/Screen/Bottom%20Navigation/home_screen.dart';
+import 'package:flightapp/Service/login_with_google.dart';
+import 'package:flightapp/Theams/Widget/button.dart';
+import 'package:flightapp/Theams/Widget/bottomnavigationbar.dart';
 import 'package:flightapp/Values/color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,33 +29,46 @@ class Login_State extends State<LoginScreen> {
 
   /// method to validate the password
   String validatePassword(String value) {
-    Pattern pattern =
-        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+    Pattern pattern =Strings.password_regexp;
     RegExp regex = new RegExp(pattern);
     print(value);
-    if (value.isEmpty) {
-      return 'Please enter password';
-    } else {
-      if (!regex.hasMatch(value))
-        return 'Enter valid password';
-      else
-        return null;
+
+    try {
+      if (value.isEmpty) {
+        return 'Please enter Email';
+      } else {
+        if (!regex.hasMatch(value))
+          return 'Enter valid Email';
+        else {
+          return null;
+        }
+      }
+    }
+    catch(Exception){
+      print(Exception);
     }
   }
 
+
   /// method to validate the email
   String validateEmail(String value) {
-    Pattern pattern = r'^(?=.*?[a-z])(?=.*?[!@#\$&*~]).{8,}$';
+    Pattern pattern = Strings.email_regexp;
     RegExp regex = new RegExp(pattern);
     print(value);
 
-    if (value.isEmpty) {
-      return 'Please enter Email';
-    } else {
-      if (!regex.hasMatch(value))
-        return 'Enter valid Email';
-      else
-        return null;
+    try {
+      if (value.isEmpty) {
+        return 'Please enter Email';
+      } else {
+        if (!regex.hasMatch(value))
+          return 'Enter valid Email';
+        else {
+          return null;
+        }
+      }
+    }
+    catch(Exception){
+      print(Exception);
     }
   }
 
@@ -181,7 +192,7 @@ class Login_State extends State<LoginScreen> {
                               if (_formKey.currentState.validate()) {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
-                                      builder: (context) => HomeScreen()),
+                                      builder: (context) => BottomNavigationBarScreen()),
                                 );
                               }
                             },
@@ -194,7 +205,8 @@ class Login_State extends State<LoginScreen> {
                         Row(children: <Widget>[
                           Expanded(
                             child: new Container(
-                                margin: const EdgeInsets.only(left: 50, right: 20.0),
+                                margin: const EdgeInsets.only(
+                                    left: 50, right: 20.0),
                                 child: Divider(
                                   color: Colors.black,
                                   height: 36,
@@ -203,7 +215,8 @@ class Login_State extends State<LoginScreen> {
                           Text("OR"),
                           Expanded(
                             child: new Container(
-                                margin: const EdgeInsets.only(left: 20.0, right: 50),
+                                margin: const EdgeInsets.only(
+                                    left: 20.0, right: 50),
                                 child: Divider(
                                   color: Colors.black,
                                   height: 50,
@@ -211,24 +224,44 @@ class Login_State extends State<LoginScreen> {
                           ),
                         ]),
                       ]),
+
                       /// google and facebook floating action button
                       Container(
                         child: Stack(
                           children: <Widget>[
                             Align(
-                              alignment: Alignment(-0.3,0),
-                              child: FloatingActionButton(
-                              //  onPressed: make_call,
-                                heroTag: "btn1",
-                                child: Image.network('https://ai.devoteam.com/wp-content/uploads/sites/91/2018/05/google-logo-icon-png-transparent-background.png',width: 35,),
-                                backgroundColor: Colors.white,
+                              alignment: Alignment(-0.3, 0),
+                              child: FlatButton(
+                                child: FloatingActionButton(
+                                  //  onPressed: make_call,
+                                  heroTag: "btn1",
+                                  child: Image.network(
+                                    'https://ai.devoteam.com/wp-content/uploads/sites/91/2018/05/google-logo-icon-png-transparent-background.png',
+                                    width: 35,
+                                  ),
+                                  backgroundColor: Colors.white,
+                                ),
+                                  onPressed:
+                                      () {
+                                    signInWithGoogle().whenComplete(() {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(builder: (context) {
+                                          return HomeScreen();
+                                        }
+                                        ),);
+                                    });
+                                  },
+
                               ),
                             ),
                             Align(
-                              alignment: Alignment(0.3,0),
+                              alignment: Alignment(0.3, 0),
                               child: FloatingActionButton(
                                 //onPressed: send_email,
-                                child: Image.network('https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512',width: 40,),
+                                child: Image.network(
+                                  'https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512',
+                                  width: 40,
+                                ),
                                 backgroundColor: Colorvalue.facebook_color,
                               ),
                             ),

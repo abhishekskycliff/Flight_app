@@ -1,5 +1,5 @@
 import 'package:flightapp/Screen/Authentication/registrationscreen.dart';
-import 'package:flightapp/Theams/Widget/widgetimages.dart';
+import 'package:flightapp/Theams/Widget/imagewidget.dart';
 import 'package:flightapp/Values/color.dart';
 import 'package:flightapp/Values/string.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +44,7 @@ class Intro_State extends State<Introduction> {
                 ),
               ],
             ),
-            image: Widgetimage(img: "intro1.png"),
+            image: ImageWidget(img: "intro1.png"),
             decoration: const PageDecoration(
               pageColor: Colors.white,
             ),
@@ -63,7 +63,7 @@ class Intro_State extends State<Introduction> {
                 ),
               ],
             ),
-            image: Widgetimage(img: "intro2.jpg"),
+            image: ImageWidget(img: "intro2.jpg"),
             decoration: const PageDecoration(
               pageColor: Colors.white,
             ),
@@ -81,7 +81,7 @@ class Intro_State extends State<Introduction> {
                 ),
               ],
             ),
-            image: Widgetimage(img: "intro3.png"),
+            image: ImageWidget(img: "intro3.png"),
             decoration: const PageDecoration(
               pageColor: Colors.white,
             ),
@@ -99,7 +99,7 @@ class Intro_State extends State<Introduction> {
                 ),
               ],
             ),
-            image: Widgetimage(img: "intro4.jpg"),
+            image: ImageWidget(img: "intro4.jpg"),
             decoration: const PageDecoration(
               pageColor: Colors.white,
             ),
