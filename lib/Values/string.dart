@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 class Strings {
 
   static const String logo_image = "asset/images/applogo.png";
+  static const String thailand_image = "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dGhhaWxhbmR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80";
+  static const String france_image = "https://wwd.com/wp-content/uploads/2018/09/saint-laurent-front-rowrtw-spring-2019-paris-fashion-week0399sf.jpg";
+  static const String India_image = "https://breathedreamgo.com/wp-content/uploads/2019/04/SS-India-Gate-1200-px.jpg";
+  static const String uae_image = "https://www.jackmorton.com/wp-content/uploads/2020/08/Dubai.png";
+
 
   static const String App_Title_1 = "navana ";
   static const String App_Title_2 = "air";
@@ -39,6 +44,23 @@ class Strings {
   static const String resturant ="Resturant";
   static const String train ="train";
   static const String shop ="Shops";
+
+  static const String offer ="Best Offers";
+  static const String popular_places ="Popular Places";
+  static const String recommended ="Recommended Destination";
+  static const String all ="View All";
+  static const String home ="Home";
+  static const String thailand ="Thailand";
+  static const String bangkok ="Bangkok";
+  static const String france ="France";
+  static const String paris ="Paris";
+  static const String india ="India";
+  static const String delhi ="Delhi";
+  static const String uae ="UAE";
+  static const String dubai ="Dubai";
+
+
+
 
 
 

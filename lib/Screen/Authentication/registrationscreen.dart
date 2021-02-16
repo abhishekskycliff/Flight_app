@@ -26,8 +26,7 @@ class Registration_State extends State<RegistrationScreen> {
 
   /// method to validate the password
   String validatePassword(String value) {
-    Pattern pattern =
-        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+    Pattern pattern =Strings.password_regexp;
     RegExp regex = new RegExp(pattern);
     print(value);
     if (value.isEmpty) {
@@ -42,7 +41,7 @@ class Registration_State extends State<RegistrationScreen> {
 
   /// method to validate the email
   String validateEmail(String value) {
-    Pattern pattern = r'^(?=.*?[a-z])(?=.*?[!@#\$&*~]).{8,}$';
+    Pattern pattern = Strings.email_regexp;
     RegExp regex = new RegExp(pattern);
     print(value);
 

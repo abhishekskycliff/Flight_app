@@ -8,9 +8,22 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
 // background method for sign in
 Future<String> signInWithGoogle() async {
 
-  // final v
 
   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
+
+  try {
+    if (googleSignInAccount == null) {
+// cancelled login
+      print('Google Sign_in ERROR! googleUser: null!');
+      return null;
+    }
+  }
+  catch(exception){
+    print('Something Went Wrong!!!! $exception');
+  }
+
+
+
   final GoogleSignInAuthentication googleSignInAuthentication =
   await googleSignInAccount.authentication;
 

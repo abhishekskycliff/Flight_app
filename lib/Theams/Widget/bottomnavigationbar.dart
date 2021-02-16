@@ -25,9 +25,6 @@ class BottomNavigationState extends State<BottomNavigationBarScreen> {
     UserAccount(),
   ];
 
-
-
-
   void _onpagechanged(int index) {
     setState(() {
       _selectedIndex = index;
@@ -43,31 +40,33 @@ class BottomNavigationState extends State<BottomNavigationBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Appbarwidget.getAppBar('world'),
+     // appBar: Appbarwidget.getAppBar('world'),
       body: PageView(
         controller: _pageController,
         children: _widgetOptions,
         onPageChanged: _onpagechanged,
         physics: NeverScrollableScrollPhysics(),
-        // onPageChanged:  ,
       ),
-
       bottomNavigationBar: BottomNavigationBar(
         elevation: 50,
+        type: BottomNavigationBarType.fixed,
         onTap: _onItemTapped,
-        selectedItemColor: Colors.indigo,
+        selectedItemColor: Colors.pinkAccent,
         currentIndex: _selectedIndex,
-        // backgroundColor: Colors.indigo,
-
+     //   backgroundColor: Colors.indigo,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home,),
             label: 'Home',
-         //   backgroundColor: Colors.green,
+
+            backgroundColor: Colors.indigo,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
             label: 'Places',
+            // title: Text('hello',style: TextStyle(
+            //   color: _selectedIndex == 0? Colors.blue:Colors.grey,
+            // ),),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_location_alt_sharp),

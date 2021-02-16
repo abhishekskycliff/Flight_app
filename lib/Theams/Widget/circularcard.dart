@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class CircularCard extends StatelessWidget{
   final IconData icon;
-  final String text,color;
-  CircularCard({ this.icon, this.text, this.color});
+  final String text,cardcolor;
+  CircularCard({ this.icon, this.text, this.cardcolor});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +13,9 @@ class CircularCard extends StatelessWidget{
       children: [
         Container(
           child: Card(
-            color: ,
+            color: HexColor(cardcolor),
             child: Icon(icon,color: Colors.white,),
-            elevation: 10,
+            elevation: 8,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50),
             ),
@@ -24,7 +25,10 @@ class CircularCard extends StatelessWidget{
         //  color: Colors.amberAccent,
           margin: const EdgeInsets.all(10),
         ),
-        Text(text),
+        Text(text,style: TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
+        ),),
       ],
     );
   }
