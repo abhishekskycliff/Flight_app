@@ -34,9 +34,19 @@ dependencies:
   firebase_auth: ^0.16.0
   google_sign_in: ^4.4.4
 
+
 dev_dependencies:
+  flutter_launcher_icons: ^0.7.0
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path_ios: "asset/launcher/icon.png"
+  image_path_android: "asset/launcher/icon.png"
+  adaptive_icon_background: "asset/launcher/background.png"
+ # adaptive_icon_foreground: "asset/launcher/foreground.png"
  # integration_test:
   #  sdk: flutter
 
