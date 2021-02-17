@@ -14,7 +14,7 @@ class CircularCard extends StatelessWidget{
         Container(
           child: Card(
             color: HexColor(cardcolor),
-            child: Icon(icon,color: Colors.white,),
+            child: Icon(icon,color: Colors.white,size: 30,),
             elevation: 8,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50),
@@ -26,8 +26,7 @@ class CircularCard extends StatelessWidget{
           margin: const EdgeInsets.all(10),
         ),
         Text(text,style: TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.bold,
+          fontSize: 16,
         ),),
       ],
     );

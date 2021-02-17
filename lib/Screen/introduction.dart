@@ -17,8 +17,9 @@ class Introduction extends StatefulWidget {
 class Intro_State extends State<Introduction> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
-  ///  IntroEnd is a method which Navigate to the LoginScreen Screen on clicking the Done text if user is not signedin else it navigate to HomeScreen
-  /// this statement works only after using Shared preference
+  ///  IntroEnd is a method which Navigate to the LoginScreen Screen
+  ///  by clicking Done if user is signed in else navigate back to LoginScreen
+  // this statement works only after using Shared preference
 
   void IntroEnd(context) {
     Navigator.of(context)
@@ -31,7 +32,7 @@ class Intro_State extends State<Introduction> {
       body: IntroductionScreen(
         key: introKey,
         pages: [
-          /// pages which gives the space to add the components within PageViewModel
+          /// pages which gives the space to add the components within PageViewM
           /// PageViewModel wellcome to navana air
           PageViewModel(
             title: Strings.title_1,
@@ -53,7 +54,7 @@ class Intro_State extends State<Introduction> {
           /// PageViewModel Flying community
           PageViewModel(
             title: Strings.title_2,
-          //  Text(Strings.title2),
+            //  Text(Strings.title2),
             bodyWidget: Column(
               children: [
                 Text(

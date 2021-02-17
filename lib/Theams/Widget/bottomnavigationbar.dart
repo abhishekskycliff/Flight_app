@@ -56,7 +56,7 @@ class BottomNavigationState extends State<BottomNavigationBarScreen> {
      //   backgroundColor: Colors.indigo,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home,),
+            icon: Icon(Icons.home_outlined,),
             label: 'Home',
 
             backgroundColor: Colors.indigo,
@@ -69,7 +69,7 @@ class BottomNavigationState extends State<BottomNavigationBarScreen> {
             // ),),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_location_alt_sharp),
+            icon: Icon(Icons.featured_play_list_outlined),
             label: 'Featured',
           ),
           BottomNavigationBarItem(
@@ -81,5 +81,4 @@ class BottomNavigationState extends State<BottomNavigationBarScreen> {
     );
   }
 }
-
 // color: Colors.indigo,

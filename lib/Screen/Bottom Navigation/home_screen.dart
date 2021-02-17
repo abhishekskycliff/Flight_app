@@ -47,11 +47,11 @@ class Home_state extends State<HomeScreen> {
                 CircularCard(
                     icon: Icons.restaurant_menu,
                     text: Strings.resturant,
-                    cardcolor: '#50e3d4'),
+                    cardcolor: '#e150e3'),
                 CircularCard(
                     icon: Icons.train,
                     text: Strings.train,
-                    cardcolor: '#5AC9F5'),
+                    cardcolor: '#50e3d4'),
               ],
             ),
             height: MediaQuery.of(context).size.height * 0.18,
